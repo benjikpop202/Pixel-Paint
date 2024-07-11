@@ -1,0 +1,184 @@
+*{
+    display: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #333;
+    position: relative;
+}
+header{
+    display: flex;
+    width: 100%;
+    height: 25vmin;
+    align-items: center;
+    background-color: rgb(24, 24, 53);
+}
+
+header h1{
+font-family: 'Silkscreen', sans-serif;
+ font-size: 10vmin;
+ background: linear-gradient(90deg,  rgb(130, 67, 149), violet, rgb(247, 163, 62), rgb(232, 106, 64));
+ background-clip: text;
+ -webkit-background-clip: text;
+ color: transparent;  
+ -webkit-text-stroke: 1px #fff;
+ /*width: 60%;*/
+ margin-left: 30px;
+ margin-right: 30px;
+ text-align: center;
+}
+
+#barra-menu{
+    display: flex;
+    width: 40%;
+    height: 80%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    
+}
+
+main{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.min-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6vmin 4vmin ;
+}
+
+label{
+    font-size: 3vmin;
+    color: #fff;
+    margin-right: 20px;
+}
+
+button{
+    height: 6vmin;
+    width: 25vmin;
+    background-color: rgb(24, 24, 53);
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 2vmin;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+#tablero{
+    display: grid;
+    grid-template-columns: repeat(65, 17px);
+    grid-template-rows: repeat(35, 17px);
+    cursor: crosshair;
+    width: 100%;
+}
+
+.cell{
+    width: 17px;
+    height: 17px;
+    background-color: #f4f4f4;
+    
+}
+
+#selector{
+    width: 12vmin;
+    height: 6vmin;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#section-controles{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+   
+}
+
+#section-dibujo{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.btn-menu{
+    border-radius: 30px;
+    height: 8vmin;
+    width: 28vmin;
+}
+
+#change-color{
+    background-color: #f4f4f4;
+    color: black;
+}
+
+#btn-neon{
+    background-color: #001;
+    color: red;
+    border:2px solid red ;
+    display: none;
+}
+
+
+@media only screen and (max-width:1200px) {
+    header h1{
+        font-size: 9vmin;
+    }
+}
+@media only screen and (max-width: 950px) {
+    main{
+        flex-direction: column-reverse;
+    }
+    header{
+        flex-direction: column;
+    }
+    header h1{
+        font-size: 8vmin;
+    }
+    #barra-menu{
+        width: 80%;
+        margin: 0;
+    }
+    #barra-menu button{
+     height: 5.5vmin;
+     width: 23vmin;
+     font-size: 0.5rem;
+    }
+    #section-controles{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #section-dibujo{
+        width: 100%;
+    }
+   
+}
+
+@media only screen and (max-width: 700px) {
+    #section-controles{
+        flex-direction: column;
+    }
+    #selector{
+        width: 20vmin;
+    }
+    .min-container{
+        padding: 3vmin;
+    }
+}

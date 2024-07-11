@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pixel Paint</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Pixel Paint</h1>
+        <div id="barra-menu">
+            <button class="btn-menu" id="change-color" onclick="changeBackground()">FONDO CLARO ☀️</button>
+            <button id="btn-neon" class="btn-menu">NEON</button>
+        </div>
+    </header>
+    <main>
+    <section id="section-dibujo">
+    <div id="tablero"></div>
+    </section>
+    <section id="section-controles">
+    <div class="min-container">
+        <label for="selector">PALETA DE COLORES</label>
+        <input type="color" id="selector">
+    </div>
+    <div class="min-container">
+        <button id="borrador">BORRADOR</button>
+    </div>
+    <div class="min-container">
+        <button id="borrar-todo">BORRAR TODO</button>
+    </div>
+    </section>
+    </main>
+</div>
+    <script src="main.js"></script>
+</body> 
+</html>
