@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <title>Pixel Paint</title>
 </head>
 <body>
@@ -33,9 +34,26 @@
     <div class="min-container">
         <button id="borrar-todo">BORRAR TODO</button>
     </div>
+    <div class="min-container">
+        <button id="descarga">DESCARGAR</button>
+    </div>
     </section>
     </main>
 </div>
-    <script src="main.js"></script>
+<script src="main.js"></script>
+<script>
+    const pixelGrid = document.getElementById("tablero")
+    document.getElementById('descarga').addEventListener('click', () => {
+        html2canvas(pixelGrid).then(canvas => {
+            const dataURL = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = dataURL;
+            link.download = 'dibujo.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    });
+</script>
 </body> 
 </html>
