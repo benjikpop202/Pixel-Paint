@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Pixel Paint" />
+    <meta property="og:description" content="Dibuja tu mundo, píxel a píxel" />
+    <meta property="og:image" content="./iconos/PX (1).png" />
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./iconos/PX (1).png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <title>Pixel Paint</title>
@@ -44,7 +48,10 @@
 <script>
     const pixelGrid = document.getElementById("tablero")
     document.getElementById('descarga').addEventListener('click', () => {
-        html2canvas(pixelGrid).then(canvas => {
+        html2canvas(pixelGrid, {
+            scale: 2,
+            useCORS: true
+        }).then(canvas => {
             const dataURL = canvas.toDataURL('image/png');
             const link = document.createElement('a');
             link.href = dataURL;
