@@ -32,14 +32,18 @@ document.addEventListener("DOMContentLoaded",()=>{
         if(darkMode){
             neonMode.style.display = "block"
             Nodos.forEach((nodo)=>{
-            nodo.style.background = "#011"
+             if(nodo.value !== true){
+               nodo.style.background = "#011"
+             }
         })
         changeColor.style.background = "#001"
         changeColor.style.color = "#fff"
         changeColor.innerHTML = "FONDO OSCURO 🌙"
         }else{
             Nodos.forEach((nodo)=>{
+             if(nodo.value !== true){
              nodo.style.background = "#f4f4f4"
+             }
              nodo.style.boxShadow = "none"})
     
         changeColor.style.background = "#f4f4f4"
@@ -80,6 +84,7 @@ neonMode.addEventListener("click", () =>{
 
 let Pintar = (celda)=>{
    let color = buttonColor.value
+   celda.value = true
     if(neonActive && darkMode){
         celda.style.background = color
         celda.style.boxShadow = `0 0 50px ${color}`
@@ -112,7 +117,7 @@ tablero.addEventListener('mouseover', function (e) {
 //borrador
 
 let borrar = (celda)=>{
-
+    celda.value = false
     if(darkMode){
         celda.style.background = "#011"
     }else{
@@ -155,19 +160,14 @@ tablero.addEventListener('mouseover', function (e) {
 
 borrarTodo.addEventListener("click", ()=>{
     let celdas = document.querySelectorAll(".cell")
-    
-    if(darkMode){
-        celdas.forEach((celda) =>{
+    celdas.forEach((celda)=>{
+        celda.value = false
+        if(darkMode){
             celda.style.background = "#011"
             celda.style.boxShadow = "none"
+        }else{
+            celda.style.background = "#f4f4f4"
+        }
+    })
     
-           })
-        
-    }else{
-        celdas.forEach((celda) =>{
-         celda.style.background = "#f4f4f4"
-        })
-    }
-    
-
 })
